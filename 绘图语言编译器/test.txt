@@ -1,0 +1,25 @@
+origindsa is (500, 100);					-- 原点位置
+scale is (20, 20);
+for t from 0 to 2*pi step pi/100 draw(cos(t), sin(t));	
+scale is (50, 50);					
+for t from 0 to 2*pi step pi/100 draw(cos(t), sin(t));
+scale is (80, 80);					
+for t from 0 to 2*pi step pi/100 draw(cos(t), sin(t));
+
+
+origin is (500, 300);									-- 右移
+scale is (80, 80/3);									-- y方向压缩为三分之一
+rot is pi/2+0*pi/3 ;									-- 旋转初值设置
+for T from -pi to pi step pi/50 draw (cos(t), sin(t));	-- 画T的轨迹
+rot is pi/2+2*pi/3;										-- 旋转2/3*pi
+for T from -pi to pi step pi/50 draw (cos(t), sin(t));	-- 画T的轨迹
+rot is pi/2-2*pi/3;										-- 再旋转2/3*pi
+for T from -pi to pi step pi/50 draw (cos(t), sin(t));	-- 画T的轨迹
+
+origin is(500, 500);									-- 再右移
+scale is (80, 80);										-- 恢复原比例
+rot is 0;												-- 不旋转
+for t from 0 to 2*pi step pi/50 draw(cos(t),sin(t));	-- 画T的轨迹
+for t from 0 to Pi*20 step Pi/50 draw					-- 画T的轨迹
+((1-1/(10/7))*Cos(T)+1/(10/7)*Cos(-T*((10/7)-1)), 
+(1-1/(10/7))*Sin(T)+1/(10/7)*Sin(-T*((10/7)-1)));
